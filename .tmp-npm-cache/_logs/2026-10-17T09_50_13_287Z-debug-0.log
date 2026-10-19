@@ -1,0 +1,790 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.17.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\vidya-ai-backend\.npmrc
+5 silly config load:file:C:\Users\Lenovo\.npmrc
+6 silly config load:file:C:\Users\Lenovo\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install sharp pdf-parse jsonwebtoken bcrypt
+8 verbose argv "install" "sharp" "pdf-parse" "jsonwebtoken" "bcrypt" "--cache" ".tmp-npm-cache"
+9 verbose logfile logs-max:10 dir:D:\vidya-ai-backend\.tmp-npm-cache\_logs\2026-10-17T09_50_13_287Z-
+10 verbose logfile D:\vidya-ai-backend\.tmp-npm-cache\_logs\2026-10-17T09_50_13_287Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest sharp@*
+15 silly packumentCache full:https://registry.npmjs.org/sharp cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/npm 303ms
+17 http fetch GET 200 https://registry.npmjs.org/sharp 221ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/sharp set size:undefined disposed:false
+19 silly fetch manifest pdf-parse@*
+20 silly packumentCache full:https://registry.npmjs.org/pdf-parse cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/pdf-parse 40ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/pdf-parse set size:undefined disposed:false
+23 silly fetch manifest jsonwebtoken@*
+24 silly packumentCache full:https://registry.npmjs.org/jsonwebtoken cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/jsonwebtoken 81ms (cache miss)
+26 silly packumentCache full:https://registry.npmjs.org/jsonwebtoken set size:undefined disposed:false
+27 silly fetch manifest bcrypt@*
+28 silly packumentCache full:https://registry.npmjs.org/bcrypt cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/bcrypt 97ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/bcrypt set size:undefined disposed:false
+31 silly placeDep ROOT bcrypt@6.0.0 OK for: vidya-ai-backend@1.0.0 want: *
+32 silly placeDep ROOT jsonwebtoken@9.0.3 OK for: vidya-ai-backend@1.0.0 want: *
+33 silly placeDep ROOT pdf-parse@2.4.5 OK for: vidya-ai-backend@1.0.0 want: *
+34 silly placeDep ROOT sharp@0.35.5 OK for: vidya-ai-backend@1.0.0 want: *
+35 silly fetch manifest node-addon-api@^8.3.0
+36 silly packumentCache full:https://registry.npmjs.org/node-addon-api cache-miss
+37 silly fetch manifest node-gyp-build@^4.8.4
+38 silly packumentCache full:https://registry.npmjs.org/node-gyp-build cache-miss
+39 silly fetch manifest lodash.once@^4.0.0
+40 silly packumentCache full:https://registry.npmjs.org/lodash.once cache-miss
+41 silly fetch manifest lodash.includes@^4.3.0
+42 silly packumentCache full:https://registry.npmjs.org/lodash.includes cache-miss
+43 silly fetch manifest lodash.isnumber@^3.0.3
+44 silly packumentCache full:https://registry.npmjs.org/lodash.isnumber cache-miss
+45 silly fetch manifest lodash.isstring@^4.0.1
+46 silly packumentCache full:https://registry.npmjs.org/lodash.isstring cache-miss
+47 silly fetch manifest lodash.isboolean@^3.0.3
+48 silly packumentCache full:https://registry.npmjs.org/lodash.isboolean cache-miss
+49 silly fetch manifest lodash.isinteger@^4.0.4
+50 silly packumentCache full:https://registry.npmjs.org/lodash.isinteger cache-miss
+51 silly fetch manifest lodash.isplainobject@^4.0.6
+52 silly packumentCache full:https://registry.npmjs.org/lodash.isplainobject cache-miss
+53 silly fetch manifest pdfjs-dist@5.4.296
+54 silly packumentCache full:https://registry.npmjs.org/pdfjs-dist cache-miss
+55 silly fetch manifest @napi-rs/canvas@0.1.80
+56 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas cache-miss
+57 http fetch GET 200 https://registry.npmjs.org/node-addon-api 79ms (cache miss)
+58 silly packumentCache full:https://registry.npmjs.org/node-addon-api set size:undefined disposed:false
+59 silly fetch manifest @img/colour@^1.1.0
+60 silly packumentCache full:https://registry.npmjs.org/@img%2fcolour cache-miss
+61 http fetch GET 200 https://registry.npmjs.org/lodash.isplainobject 96ms (cache miss)
+62 silly packumentCache full:https://registry.npmjs.org/lodash.isplainobject set size:undefined disposed:false
+63 silly fetch manifest detect-libc@^2.1.2
+64 silly packumentCache full:https://registry.npmjs.org/detect-libc cache-miss
+65 http fetch GET 200 https://registry.npmjs.org/lodash.includes 98ms (cache miss)
+66 silly packumentCache full:https://registry.npmjs.org/lodash.includes set size:undefined disposed:false
+67 silly fetch manifest @img/sharp-linux-arm@0.35.5
+68 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm cache-miss
+69 http fetch GET 200 https://registry.npmjs.org/lodash.isstring 132ms (cache miss)
+70 silly packumentCache full:https://registry.npmjs.org/lodash.isstring set size:undefined disposed:false
+71 silly fetch manifest @img/sharp-linux-x64@0.35.5
+72 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-x64 cache-miss
+73 http fetch GET 200 https://registry.npmjs.org/lodash.isboolean 137ms (cache miss)
+74 silly packumentCache full:https://registry.npmjs.org/lodash.isboolean set size:undefined disposed:false
+75 silly fetch manifest @img/sharp-win32-x64@0.35.5
+76 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-x64 cache-miss
+77 http fetch GET 200 https://registry.npmjs.org/lodash.once 143ms (cache miss)
+78 silly packumentCache full:https://registry.npmjs.org/lodash.once set size:undefined disposed:false
+79 silly fetch manifest @img/sharp-darwin-x64@0.35.5
+80 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-x64 cache-miss
+81 http fetch GET 200 https://registry.npmjs.org/@img%2fcolour 65ms (cache miss)
+82 silly packumentCache full:https://registry.npmjs.org/@img%2fcolour set size:undefined disposed:false
+83 silly fetch manifest @img/sharp-win32-ia32@0.35.5
+84 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-ia32 cache-miss
+85 http fetch GET 200 https://registry.npmjs.org/detect-libc 64ms (cache miss)
+86 silly packumentCache full:https://registry.npmjs.org/detect-libc set size:undefined disposed:false
+87 silly fetch manifest @img/sharp-linux-arm64@0.35.5
+88 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm64 cache-miss
+89 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas 177ms (cache miss)
+90 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas set size:undefined disposed:false
+91 silly fetch manifest @img/sharp-linux-ppc64@0.35.5
+92 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-ppc64 cache-miss
+93 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linux-arm 92ms (cache miss)
+94 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm set size:undefined disposed:false
+95 silly fetch manifest @img/sharp-linux-s390x@0.35.5
+96 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-s390x cache-miss
+97 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-win32-x64 78ms (cache miss)
+98 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-x64 set size:undefined disposed:false
+99 silly fetch manifest @img/sharp-win32-arm64@0.35.5
+100 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-arm64 cache-miss
+101 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linux-x64 90ms (cache miss)
+102 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-x64 set size:undefined disposed:false
+103 silly fetch manifest @img/sharp-darwin-arm64@0.35.5
+104 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-arm64 cache-miss
+105 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-darwin-x64 83ms (cache miss)
+106 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-x64 set size:undefined disposed:false
+107 silly fetch manifest @img/sharp-linux-riscv64@0.35.5
+108 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-riscv64 cache-miss
+109 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linux-arm64 73ms (cache miss)
+110 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-arm64 set size:undefined disposed:false
+111 silly fetch manifest @img/sharp-linuxmusl-x64@0.35.5
+112 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-x64 cache-miss
+113 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linux-ppc64 59ms (cache miss)
+114 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-ppc64 set size:undefined disposed:false
+115 silly fetch manifest @img/sharp-freebsd-wasm32@0.35.5
+116 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-freebsd-wasm32 cache-miss
+117 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linux-s390x 63ms (cache miss)
+118 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-s390x set size:undefined disposed:false
+119 silly fetch manifest @img/sharp-linuxmusl-arm64@0.35.5
+120 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-arm64 cache-miss
+121 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-darwin-arm64 58ms (cache miss)
+122 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-darwin-arm64 set size:undefined disposed:false
+123 silly fetch manifest @img/sharp-libvips-linux-arm@1.3.4
+124 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm cache-miss
+125 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-win32-arm64 68ms (cache miss)
+126 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-arm64 set size:undefined disposed:false
+127 silly fetch manifest @img/sharp-libvips-linux-x64@1.3.4
+128 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-x64 cache-miss
+129 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linux-riscv64 60ms (cache miss)
+130 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linux-riscv64 set size:undefined disposed:false
+131 silly fetch manifest @img/sharp-libvips-darwin-x64@1.3.4
+132 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-x64 cache-miss
+133 http fetch GET 200 https://registry.npmjs.org/pdfjs-dist 294ms (cache miss)
+134 silly packumentCache full:https://registry.npmjs.org/pdfjs-dist set size:undefined disposed:false
+135 silly fetch manifest @img/sharp-libvips-linux-arm64@1.3.4
+136 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm64 cache-miss
+137 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linuxmusl-x64 83ms (cache miss)
+138 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-x64 set size:undefined disposed:false
+139 silly fetch manifest @img/sharp-libvips-linux-ppc64@1.3.4
+140 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-ppc64 cache-miss
+141 http fetch GET 200 https://registry.npmjs.org/node-gyp-build 334ms (cache miss)
+142 silly packumentCache full:https://registry.npmjs.org/node-gyp-build set size:undefined disposed:false
+143 silly fetch manifest @img/sharp-libvips-linux-s390x@1.3.4
+144 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-s390x cache-miss
+145 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-linuxmusl-arm64 79ms (cache miss)
+146 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-linuxmusl-arm64 set size:undefined disposed:false
+147 silly fetch manifest @img/sharp-libvips-darwin-arm64@1.3.4
+148 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-arm64 cache-miss
+149 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm 56ms (cache miss)
+150 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm set size:undefined disposed:false
+151 silly fetch manifest @img/sharp-webcontainers-wasm32@0.35.5
+152 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-webcontainers-wasm32 cache-miss
+153 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linux-x64 58ms (cache miss)
+154 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-x64 set size:undefined disposed:false
+155 silly fetch manifest @img/sharp-libvips-linux-riscv64@1.3.4
+156 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-riscv64 cache-miss
+157 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm64 48ms (cache miss)
+158 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-arm64 set size:undefined disposed:false
+159 silly fetch manifest @img/sharp-libvips-linuxmusl-x64@1.3.4
+160 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-x64 cache-miss
+161 http fetch GET 200 https://registry.npmjs.org/lodash.isnumber 373ms (cache miss)
+162 silly packumentCache full:https://registry.npmjs.org/lodash.isnumber set size:undefined disposed:false
+163 silly fetch manifest @img/sharp-libvips-linuxmusl-arm64@1.3.4
+164 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-arm64 cache-miss
+165 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-darwin-x64 81ms (cache miss)
+166 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-x64 set size:undefined disposed:false
+167 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linux-s390x 48ms (cache miss)
+168 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-s390x set size:undefined disposed:false
+169 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-webcontainers-wasm32 47ms (cache miss)
+170 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-webcontainers-wasm32 set size:undefined disposed:false
+171 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linux-ppc64 69ms (cache miss)
+172 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-ppc64 set size:undefined disposed:false
+173 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-darwin-arm64 56ms (cache miss)
+174 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-darwin-arm64 set size:undefined disposed:false
+175 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linux-riscv64 45ms (cache miss)
+176 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linux-riscv64 set size:undefined disposed:false
+177 http fetch GET 200 https://registry.npmjs.org/lodash.isinteger 398ms (cache miss)
+178 silly packumentCache full:https://registry.npmjs.org/lodash.isinteger set size:undefined disposed:false
+179 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-arm64 45ms (cache miss)
+180 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-arm64 set size:undefined disposed:false
+181 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-win32-ia32 361ms (cache miss)
+182 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-win32-ia32 set size:undefined disposed:false
+183 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-freebsd-wasm32 356ms (cache miss)
+184 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-freebsd-wasm32 set size:undefined disposed:false
+185 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-x64 247ms (cache miss)
+186 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-libvips-linuxmusl-x64 set size:undefined disposed:false
+187 silly placeDep ROOT node-addon-api@8.9.2 OK for: bcrypt@6.0.0 want: ^8.3.0
+188 silly placeDep ROOT node-gyp-build@4.8.4 OK for: bcrypt@6.0.0 want: ^4.8.4
+189 silly placeDep ROOT lodash.includes@4.3.0 OK for: jsonwebtoken@9.0.3 want: ^4.3.0
+190 silly placeDep ROOT lodash.isboolean@3.0.3 OK for: jsonwebtoken@9.0.3 want: ^3.0.3
+191 silly placeDep ROOT lodash.isinteger@4.0.4 OK for: jsonwebtoken@9.0.3 want: ^4.0.4
+192 silly placeDep ROOT lodash.isnumber@3.0.3 OK for: jsonwebtoken@9.0.3 want: ^3.0.3
+193 silly placeDep ROOT lodash.isplainobject@4.0.6 OK for: jsonwebtoken@9.0.3 want: ^4.0.6
+194 silly placeDep ROOT lodash.isstring@4.0.1 OK for: jsonwebtoken@9.0.3 want: ^4.0.1
+195 silly placeDep ROOT lodash.once@4.1.1 OK for: jsonwebtoken@9.0.3 want: ^4.0.0
+196 silly placeDep ROOT @napi-rs/canvas@0.1.80 OK for: pdf-parse@2.4.5 want: 0.1.80
+197 silly placeDep ROOT pdfjs-dist@5.4.296 OK for: pdf-parse@2.4.5 want: 5.4.296
+198 silly fetch manifest @napi-rs/canvas-darwin-x64@0.1.80
+199 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-darwin-x64 cache-miss
+200 silly fetch manifest @napi-rs/canvas-darwin-arm64@0.1.80
+201 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-darwin-arm64 cache-miss
+202 silly fetch manifest @napi-rs/canvas-android-arm64@0.1.80
+203 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-android-arm64 cache-miss
+204 silly fetch manifest @napi-rs/canvas-linux-x64-gnu@0.1.80
+205 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-x64-gnu cache-miss
+206 silly fetch manifest @napi-rs/canvas-linux-x64-musl@0.1.80
+207 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-x64-musl cache-miss
+208 silly fetch manifest @napi-rs/canvas-win32-x64-msvc@0.1.80
+209 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-win32-x64-msvc cache-miss
+210 silly fetch manifest @napi-rs/canvas-linux-arm64-gnu@0.1.80
+211 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm64-gnu cache-miss
+212 silly fetch manifest @napi-rs/canvas-linux-arm64-musl@0.1.80
+213 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm64-musl cache-miss
+214 silly fetch manifest @napi-rs/canvas-linux-riscv64-gnu@0.1.80
+215 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-riscv64-gnu cache-miss
+216 silly fetch manifest @napi-rs/canvas-linux-arm-gnueabihf@0.1.80
+217 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm-gnueabihf cache-miss
+218 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-linux-riscv64-gnu 112ms (cache miss)
+219 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-riscv64-gnu set size:undefined disposed:false
+220 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-win32-x64-msvc 115ms (cache miss)
+221 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-win32-x64-msvc set size:undefined disposed:false
+222 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm64-musl 118ms (cache miss)
+223 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm64-musl set size:undefined disposed:false
+224 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-darwin-arm64 121ms (cache miss)
+225 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-darwin-arm64 set size:undefined disposed:false
+226 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm64-gnu 122ms (cache miss)
+227 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm64-gnu set size:undefined disposed:false
+228 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-darwin-x64 133ms (cache miss)
+229 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-darwin-x64 set size:undefined disposed:false
+230 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm-gnueabihf 291ms (cache miss)
+231 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-arm-gnueabihf set size:undefined disposed:false
+232 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-android-arm64 299ms (cache miss)
+233 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-android-arm64 set size:undefined disposed:false
+234 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-linux-x64-gnu 302ms (cache miss)
+235 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-x64-gnu set size:undefined disposed:false
+236 http fetch GET 200 https://registry.npmjs.org/@napi-rs%2fcanvas-linux-x64-musl 339ms (cache miss)
+237 silly packumentCache full:https://registry.npmjs.org/@napi-rs%2fcanvas-linux-x64-musl set size:undefined disposed:false
+238 silly placeDep ROOT @napi-rs/canvas-android-arm64@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+239 silly placeDep ROOT @napi-rs/canvas-darwin-arm64@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+240 silly placeDep ROOT @napi-rs/canvas-darwin-x64@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+241 silly placeDep ROOT @napi-rs/canvas-linux-arm-gnueabihf@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+242 silly placeDep ROOT @napi-rs/canvas-linux-arm64-gnu@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+243 silly placeDep ROOT @napi-rs/canvas-linux-arm64-musl@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+244 silly placeDep ROOT @napi-rs/canvas-linux-riscv64-gnu@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+245 silly placeDep ROOT @napi-rs/canvas-linux-x64-gnu@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+246 silly placeDep ROOT @napi-rs/canvas-linux-x64-musl@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+247 silly placeDep ROOT @napi-rs/canvas-win32-x64-msvc@0.1.80 OK for: @napi-rs/canvas@0.1.80 want: 0.1.80
+248 silly placeDep ROOT @img/colour@1.1.0 OK for: sharp@0.35.5 want: ^1.1.0
+249 silly placeDep ROOT @img/sharp-darwin-arm64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+250 silly placeDep ROOT @img/sharp-darwin-x64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+251 silly placeDep ROOT @img/sharp-freebsd-wasm32@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+252 silly placeDep ROOT @img/sharp-libvips-darwin-arm64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+253 silly placeDep ROOT @img/sharp-libvips-darwin-x64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+254 silly placeDep ROOT @img/sharp-libvips-linux-arm@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+255 silly placeDep ROOT @img/sharp-libvips-linux-arm64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+256 silly placeDep ROOT @img/sharp-libvips-linux-ppc64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+257 silly placeDep ROOT @img/sharp-libvips-linux-riscv64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+258 silly placeDep ROOT @img/sharp-libvips-linux-s390x@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+259 silly placeDep ROOT @img/sharp-libvips-linux-x64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+260 silly placeDep ROOT @img/sharp-libvips-linuxmusl-arm64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+261 silly placeDep ROOT @img/sharp-libvips-linuxmusl-x64@1.3.4 OK for: sharp@0.35.5 want: 1.3.4
+262 silly placeDep ROOT @img/sharp-linux-arm@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+263 silly placeDep ROOT @img/sharp-linux-arm64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+264 silly placeDep ROOT @img/sharp-linux-ppc64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+265 silly placeDep ROOT @img/sharp-linux-riscv64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+266 silly placeDep ROOT @img/sharp-linux-s390x@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+267 silly placeDep ROOT @img/sharp-linux-x64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+268 silly placeDep ROOT @img/sharp-linuxmusl-arm64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+269 silly placeDep ROOT @img/sharp-linuxmusl-x64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+270 silly placeDep ROOT @img/sharp-webcontainers-wasm32@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+271 silly placeDep ROOT @img/sharp-win32-arm64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+272 silly placeDep ROOT @img/sharp-win32-ia32@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+273 silly placeDep ROOT @img/sharp-win32-x64@0.35.5 OK for: sharp@0.35.5 want: 0.35.5
+274 silly placeDep ROOT detect-libc@2.1.2 OK for: sharp@0.35.5 want: ^2.1.2
+275 silly fetch manifest @img/sharp-wasm32@0.35.5
+276 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-wasm32 cache-miss
+277 silly fetch manifest @img/sharp-wasm32@0.35.5
+278 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-wasm32 cache-miss
+279 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-wasm32 113ms (cache miss)
+280 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-wasm32 set size:undefined disposed:false
+281 http fetch GET 200 https://registry.npmjs.org/@img%2fsharp-wasm32 115ms (cache miss)
+282 silly packumentCache full:https://registry.npmjs.org/@img%2fsharp-wasm32 set size:undefined disposed:false
+283 silly placeDep ROOT @img/sharp-wasm32@0.35.5 OK for: @img/sharp-freebsd-wasm32@0.35.5 want: 0.35.5
+284 silly fetch manifest @emnapi/runtime@^1.11.3
+285 silly packumentCache full:https://registry.npmjs.org/@emnapi%2fruntime cache-miss
+286 http fetch GET 200 https://registry.npmjs.org/@emnapi%2fruntime 58ms (cache miss)
+287 silly packumentCache full:https://registry.npmjs.org/@emnapi%2fruntime set size:undefined disposed:false
+288 silly placeDep ROOT @emnapi/runtime@1.11.3 OK for: @img/sharp-wasm32@0.35.5 want: ^1.11.3
+289 silly fetch manifest tslib@^2.4.0
+290 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+291 http fetch GET 200 https://registry.npmjs.org/tslib 48ms (cache miss)
+292 silly packumentCache full:https://registry.npmjs.org/tslib set size:undefined disposed:false
+293 silly placeDep node_modules/@emnapi/runtime tslib@2.8.1 OK for: @emnapi/runtime@1.11.3 want: ^2.4.0
+294 silly reify moves {}
+295 silly audit bulk request {
+295 silly audit   '@google/genai': [ '2.30.0' ],
+295 silly audit   '@mongodb-js/saslprep': [ '1.6.1' ],
+295 silly audit   '@noble/ciphers': [ '1.3.0' ],
+295 silly audit   '@noble/hashes': [ '1.8.0' ],
+295 silly audit   '@pdf-lib/standard-fonts': [ '1.0.0' ],
+295 silly audit   '@pdf-lib/upng': [ '1.0.1' ],
+295 silly audit   '@protobufjs/aspromise': [ '1.1.2' ],
+295 silly audit   '@protobufjs/base64': [ '1.1.2' ],
+295 silly audit   '@protobufjs/codegen': [ '2.0.5' ],
+295 silly audit   '@protobufjs/eventemitter': [ '1.1.1' ],
+295 silly audit   '@protobufjs/fetch': [ '1.1.1' ],
+295 silly audit   '@protobufjs/float': [ '1.0.2' ],
+295 silly audit   '@protobufjs/path': [ '1.1.2' ],
+295 silly audit   '@protobufjs/pool': [ '1.1.0' ],
+295 silly audit   '@protobufjs/utf8': [ '1.1.2' ],
+295 silly audit   '@standard-schema/spec': [ '1.1.0' ],
+295 silly audit   '@swc/helpers': [ '0.5.23' ],
+295 silly audit   tslib: [ '2.8.1', '1.14.1' ],
+295 silly audit   '@types/node': [ '26.6.5' ],
+295 silly audit   '@types/retry': [ '0.12.0' ],
+295 silly audit   '@types/webidl-conversions': [ '7.0.3' ],
+295 silly audit   '@types/whatwg-url': [ '13.0.0' ],
+295 silly audit   accepts: [ '2.0.0' ],
+295 silly audit   'agent-base': [ '7.1.4' ],
+295 silly audit   anymatch: [ '3.1.3' ],
+295 silly audit   'append-field': [ '1.0.0' ],
+295 silly audit   'balanced-match': [ '4.0.4' ],
+295 silly audit   'base64-js': [ '1.5.1', '0.0.8' ],
+295 silly audit   'basic-auth': [ '2.0.1' ],
+295 silly audit   'safe-buffer': [ '5.1.2', '5.2.1' ],
+295 silly audit   'bignumber.js': [ '9.3.1' ],
+295 silly audit   'binary-extensions': [ '2.3.0' ],
+295 silly audit   'body-parser': [ '2.3.0' ],
+295 silly audit   'brace-expansion': [ '5.0.12' ],
+295 silly audit   braces: [ '3.0.3' ],
+295 silly audit   brotli: [ '1.3.3' ],
+295 silly audit   bson: [ '7.3.3' ],
+295 silly audit   'buffer-equal-constant-time': [ '1.0.1' ],
+295 silly audit   busboy: [ '1.6.0' ],
+295 silly audit   bytes: [ '3.1.2' ],
+295 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+295 silly audit   'call-bound': [ '1.0.4' ],
+295 silly audit   chokidar: [ '3.6.0' ],
+295 silly audit   clone: [ '2.1.2' ],
+295 silly audit   'content-disposition': [ '2.0.1' ],
+295 silly audit   'content-type': [ '2.1.0' ],
+295 silly audit   cookie: [ '0.7.2' ],
+295 silly audit   'cookie-signature': [ '1.2.2' ],
+295 silly audit   cors: [ '2.8.6' ],
+295 silly audit   'data-uri-to-buffer': [ '4.0.1' ],
+295 silly audit   debug: [ '4.4.3', '2.6.9' ],
+295 silly audit   depd: [ '2.0.0' ],
+295 silly audit   dfa: [ '1.2.0' ],
+295 silly audit   dotenv: [ '18.0.8' ],
+295 silly audit   'dunder-proto': [ '1.0.1' ],
+295 silly audit   'ecdsa-sig-formatter': [ '1.0.11' ],
+295 silly audit   'ee-first': [ '1.1.1' ],
+295 silly audit   encodeurl: [ '2.0.0' ],
+295 silly audit   'es-define-property': [ '1.0.1' ],
+295 silly audit   'es-errors': [ '1.3.0' ],
+295 silly audit   'es-object-atoms': [ '1.1.2' ],
+295 silly audit   'escape-html': [ '1.0.3' ],
+295 silly audit   etag: [ '1.8.1' ],
+295 silly audit   express: [ '5.3.0' ],
+295 silly audit   extend: [ '3.0.2' ],
+295 silly audit   'fast-deep-equal': [ '3.1.3' ],
+295 silly audit   'fetch-blob': [ '3.2.0' ],
+295 silly audit   fflate: [ '0.8.3' ],
+295 silly audit   'fill-range': [ '7.1.1' ],
+295 silly audit   finalhandler: [ '2.1.1' ],
+295 silly audit   fontkit: [ '2.0.4' ],
+295 silly audit   'formdata-polyfill': [ '4.0.10' ],
+295 silly audit   forwarded: [ '0.2.0' ],
+295 silly audit   fresh: [ '2.0.0' ],
+295 silly audit   fsevents: [ '2.3.3' ],
+295 silly audit   'function-bind': [ '1.1.2' ],
+295 silly audit   gaxios: [ '7.3.1' ],
+295 silly audit   'gcp-metadata': [ '8.1.2', '7.0.1' ],
+295 silly audit   'get-intrinsic': [ '1.3.0' ],
+295 silly audit   'get-proto': [ '1.0.1' ],
+295 silly audit   'glob-parent': [ '5.1.2' ],
+295 silly audit   'google-auth-library': [ '10.9.1' ],
+295 silly audit   'google-logging-utils': [ '1.1.3' ],
+295 silly audit   gopd: [ '1.2.0' ],
+295 silly audit   'has-flag': [ '3.0.0' ],
+295 silly audit   'has-symbols': [ '1.1.0' ],
+295 silly audit   hasown: [ '2.0.4' ],
+295 silly audit   helmet: [ '8.3.0' ],
+295 silly audit   'http-errors': [ '2.0.1' ],
+295 silly audit   'https-proxy-agent': [ '7.0.6' ],
+295 silly audit   'iconv-lite': [ '0.7.3' ],
+295 silly audit   'ignore-by-default': [ '1.0.1' ],
+295 silly audit   inherits: [ '2.0.4' ],
+295 silly audit   'ipaddr.js': [ '1.9.1' ],
+295 silly audit   'is-binary-path': [ '2.1.0' ],
+295 silly audit   'is-extglob': [ '2.1.1' ],
+295 silly audit   'is-glob': [ '4.0.3' ],
+295 silly audit   'is-number': [ '7.0.0' ],
+295 silly audit   'is-promise': [ '4.0.0' ],
+295 silly audit   'json-bigint': [ '1.0.0' ],
+295 silly audit   jwa: [ '2.0.1' ],
+295 silly audit   jws: [ '4.0.1' ],
+295 silly audit   kareem: [ '3.4.1' ],
+295 silly audit   linebreak: [ '1.1.0' ],
+295 silly audit   long: [ '5.3.2' ],
+295 silly audit   'math-intrinsics': [ '1.1.0' ],
+295 silly audit   'media-typer': [ '1.1.1', '0.3.0' ],
+295 silly audit   'memory-pager': [ '1.5.0' ],
+295 silly audit   'merge-descriptors': [ '2.0.0' ],
+295 silly audit   'mime-db': [ '1.54.0', '1.52.0' ],
+295 silly audit   'mime-types': [ '3.0.2', '2.1.35' ],
+295 silly audit   minimatch: [ '10.2.6' ],
+295 silly audit   'mongodb-connection-string-url': [ '7.0.2' ],
+295 silly audit   mongoose: [ '9.11.2' ],
+295 silly audit   mongodb: [ '7.7.0' ],
+295 silly audit   morgan: [ '1.12.1' ],
+295 silly audit   ms: [ '2.0.0', '2.1.3' ],
+295 silly audit   mpath: [ '0.9.0' ],
+295 silly audit   mquery: [ '6.0.0' ],
+295 silly audit   multer: [ '2.4.0' ],
+295 silly audit   'type-is': [ '1.6.18', '2.1.0' ],
+295 silly audit   negotiator: [ '1.1.0' ],
+295 silly audit   'node-domexception': [ '1.0.0' ],
+295 silly audit   'node-fetch': [ '3.3.2' ],
+295 silly audit   nodemon: [ '3.1.14' ],
+295 silly audit   'normalize-path': [ '3.0.0' ],
+295 silly audit   'object-assign': [ '4.1.1' ],
+295 silly audit   'object-inspect': [ '1.13.4' ],
+295 silly audit   'on-finished': [ '2.4.1' ],
+295 silly audit   'on-headers': [ '1.1.0' ],
+295 silly audit   once: [ '1.4.0' ],
+295 silly audit   'p-retry': [ '4.6.2' ],
+295 silly audit   pako: [ '1.0.11', '0.2.9' ],
+295 silly audit   parseurl: [ '1.3.3' ],
+295 silly audit   'path-to-regexp': [ '8.4.2' ],
+295 silly audit   'pdf-lib': [ '1.17.1' ],
+295 silly audit   pdfkit: [ '0.20.2' ],
+295 silly audit   picomatch: [ '2.3.2' ],
+295 silly audit   'png-js': [ '2.0.0' ],
+295 silly audit   protobufjs: [ '7.6.6' ],
+295 silly audit   'proxy-addr': [ '2.0.8' ],
+295 silly audit   'pstree.remy': [ '1.1.8' ],
+295 silly audit   punycode: [ '2.3.1' ],
+295 silly audit   qs: [ '6.16.1' ],
+295 silly audit   'range-parser': [ '1.3.0' ],
+295 silly audit   'raw-body': [ '3.0.2' ],
+295 silly audit   readdirp: [ '3.6.0' ],
+295 silly audit   restructure: [ '3.0.2' ],
+295 silly audit   retry: [ '0.13.1' ],
+295 silly audit   router: [ '2.2.0' ],
+295 silly audit   'safer-buffer': [ '2.1.2' ],
+295 silly audit   semver: [ '7.8.5' ],
+295 silly audit   send: [ '1.2.1' ],
+295 silly audit   'serve-static': [ '2.2.1' ],
+295 silly audit   setprototypeof: [ '1.2.0' ],
+295 silly audit   'side-channel': [ '1.1.1' ],
+295 silly audit   'side-channel-list': [ '1.0.1' ],
+295 silly audit   'side-channel-map': [ '1.0.1' ],
+295 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+295 silly audit   sift: [ '17.1.3' ],
+295 silly audit   'simple-update-notifier': [ '2.0.0' ],
+295 silly audit   'sparse-bitfield': [ '3.0.3' ],
+295 silly audit   statuses: [ '2.0.2' ],
+295 silly audit   streamsearch: [ '1.1.0' ],
+295 silly audit   'supports-color': [ '5.5.0' ],
+295 silly audit   'tiny-inflate': [ '1.0.3' ],
+295 silly audit   'to-regex-range': [ '5.0.1' ],
+295 silly audit   toidentifier: [ '1.0.1' ],
+295 silly audit   touch: [ '3.1.1' ],
+295 silly audit   tr46: [ '5.1.1' ],
+295 silly audit   undefsafe: [ '2.0.5' ],
+295 silly audit   'undici-types': [ '8.9.0' ],
+295 silly audit   'unicode-properties': [ '1.4.1' ],
+295 silly audit   'unicode-trie': [ '2.0.0' ],
+295 silly audit   unpipe: [ '1.0.0' ],
+295 silly audit   vary: [ '1.1.2' ],
+295 silly audit   'web-streams-polyfill': [ '3.3.3' ],
+295 silly audit   'webidl-conversions': [ '7.0.0' ],
+295 silly audit   'whatwg-url': [ '14.2.0' ],
+295 silly audit   wrappy: [ '1.0.2' ],
+295 silly audit   ws: [ '8.22.0' ],
+295 silly audit   bcrypt: [ '6.0.0' ],
+295 silly audit   jsonwebtoken: [ '9.0.3' ],
+295 silly audit   'pdf-parse': [ '2.4.5' ],
+295 silly audit   sharp: [ '0.35.5' ],
+295 silly audit   'node-addon-api': [ '8.9.2' ],
+295 silly audit   'node-gyp-build': [ '4.8.4' ],
+295 silly audit   'lodash.includes': [ '4.3.0' ],
+295 silly audit   'lodash.isboolean': [ '3.0.3' ],
+295 silly audit   'lodash.isinteger': [ '4.0.4' ],
+295 silly audit   'lodash.isnumber': [ '3.0.3' ],
+295 silly audit   'lodash.isplainobject': [ '4.0.6' ],
+295 silly audit   'lodash.isstring': [ '4.0.1' ],
+295 silly audit   'lodash.once': [ '4.1.1' ],
+295 silly audit   '@napi-rs/canvas': [ '0.1.80' ],
+295 silly audit   'pdfjs-dist': [ '5.4.296' ],
+295 silly audit   '@napi-rs/canvas-android-arm64': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-darwin-arm64': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-darwin-x64': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-linux-arm-gnueabihf': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-linux-arm64-gnu': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-linux-arm64-musl': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-linux-riscv64-gnu': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-linux-x64-gnu': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-linux-x64-musl': [ '0.1.80' ],
+295 silly audit   '@napi-rs/canvas-win32-x64-msvc': [ '0.1.80' ],
+295 silly audit   '@img/colour': [ '1.1.0' ],
+295 silly audit   '@img/sharp-darwin-arm64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-darwin-x64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-freebsd-wasm32': [ '0.35.5' ],
+295 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linux-arm': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linux-ppc64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linux-riscv64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linux-x64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.3.4' ],
+295 silly audit   '@img/sharp-linux-arm': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linux-arm64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linux-ppc64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linux-riscv64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linux-s390x': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linux-x64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-linuxmusl-x64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-webcontainers-wasm32': [ '0.35.5' ],
+295 silly audit   '@img/sharp-win32-arm64': [ '0.35.5' ],
+295 silly audit   '@img/sharp-win32-ia32': [ '0.35.5' ],
+295 silly audit   '@img/sharp-win32-x64': [ '0.35.5' ],
+295 silly audit   'detect-libc': [ '2.1.2' ],
+295 silly audit   '@img/sharp-wasm32': [ '0.35.5' ],
+295 silly audit   '@emnapi/runtime': [ '1.11.3' ]
+295 silly audit }
+296 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-win32-ia32
+297 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-win32-ia32' ]
+298 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-win32-arm64
+299 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-win32-arm64' ]
+300 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-webcontainers-wasm32
+301 silly reify mark deleted [
+301 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-webcontainers-wasm32'
+301 silly reify ]
+302 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linuxmusl-x64
+303 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linuxmusl-x64' ]
+304 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linuxmusl-arm64
+305 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linuxmusl-arm64' ]
+306 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linux-x64
+307 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linux-x64' ]
+308 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linux-s390x
+309 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linux-s390x' ]
+310 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linux-riscv64
+311 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linux-riscv64' ]
+312 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linux-ppc64
+313 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linux-ppc64' ]
+314 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linux-arm64
+315 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linux-arm64' ]
+316 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-linux-arm
+317 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-linux-arm' ]
+318 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linuxmusl-x64
+319 silly reify mark deleted [
+319 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+319 silly reify ]
+320 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linuxmusl-arm64
+321 silly reify mark deleted [
+321 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+321 silly reify ]
+322 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linux-x64
+323 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linux-x64' ]
+324 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linux-s390x
+325 silly reify mark deleted [
+325 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linux-s390x'
+325 silly reify ]
+326 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linux-riscv64
+327 silly reify mark deleted [
+327 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linux-riscv64'
+327 silly reify ]
+328 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linux-ppc64
+329 silly reify mark deleted [
+329 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linux-ppc64'
+329 silly reify ]
+330 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linux-arm64
+331 silly reify mark deleted [
+331 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linux-arm64'
+331 silly reify ]
+332 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-linux-arm
+333 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-linux-arm' ]
+334 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-darwin-x64
+335 silly reify mark deleted [
+335 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-darwin-x64'
+335 silly reify ]
+336 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-libvips-darwin-arm64
+337 silly reify mark deleted [
+337 silly reify   'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+337 silly reify ]
+338 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-freebsd-wasm32
+339 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-freebsd-wasm32' ]
+340 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-darwin-x64
+341 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-darwin-x64' ]
+342 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@img\sharp-darwin-arm64
+343 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@img\\sharp-darwin-arm64' ]
+344 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-linux-x64-musl
+345 silly reify mark deleted [
+345 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-linux-x64-musl'
+345 silly reify ]
+346 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-linux-x64-gnu
+347 silly reify mark deleted [
+347 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-linux-x64-gnu'
+347 silly reify ]
+348 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-linux-riscv64-gnu
+349 silly reify mark deleted [
+349 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-linux-riscv64-gnu'
+349 silly reify ]
+350 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-linux-arm64-musl
+351 silly reify mark deleted [
+351 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-linux-arm64-musl'
+351 silly reify ]
+352 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-linux-arm64-gnu
+353 silly reify mark deleted [
+353 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-linux-arm64-gnu'
+353 silly reify ]
+354 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-linux-arm-gnueabihf
+355 silly reify mark deleted [
+355 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-linux-arm-gnueabihf'
+355 silly reify ]
+356 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-darwin-x64
+357 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-darwin-x64' ]
+358 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-darwin-arm64
+359 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-darwin-arm64' ]
+360 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\@napi-rs\canvas-android-arm64
+361 silly reify mark deleted [
+361 silly reify   'D:\\vidya-ai-backend\\node_modules\\@napi-rs\\canvas-android-arm64'
+361 silly reify ]
+362 verbose reify failed optional dependency D:\vidya-ai-backend\node_modules\fsevents
+363 silly reify mark deleted [ 'D:\\vidya-ai-backend\\node_modules\\fsevents' ]
+364 http cache @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.3.tgz 0ms (cache hit)
+365 http cache @img/sharp-wasm32@https://registry.npmjs.org/@img/sharp-wasm32/-/sharp-wasm32-0.35.5.tgz 0ms (cache hit)
+366 http cache detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz 0ms (cache hit)
+367 http cache @img/sharp-win32-x64@https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.5.tgz 0ms (cache hit)
+368 http cache @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz 0ms (cache hit)
+369 http cache @napi-rs/canvas-win32-x64-msvc@https://registry.npmjs.org/@napi-rs/canvas-win32-x64-msvc/-/canvas-win32-x64-msvc-0.1.80.tgz 0ms (cache hit)
+370 http cache @napi-rs/canvas@https://registry.npmjs.org/@napi-rs/canvas/-/canvas-0.1.80.tgz 0ms (cache hit)
+371 http cache pdfjs-dist@https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-5.4.296.tgz 0ms (cache hit)
+372 http cache lodash.isstring@https://registry.npmjs.org/lodash.isstring/-/lodash.isstring-4.0.1.tgz 0ms (cache hit)
+373 http cache lodash.once@https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz 0ms (cache hit)
+374 http cache lodash.isnumber@https://registry.npmjs.org/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz 0ms (cache hit)
+375 http cache lodash.isplainobject@https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz 0ms (cache hit)
+376 http cache lodash.isboolean@https://registry.npmjs.org/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz 0ms (cache hit)
+377 http cache lodash.includes@https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz 0ms (cache hit)
+378 http cache node-gyp-build@https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz 0ms (cache hit)
+379 http cache sharp@https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz 0ms (cache hit)
+380 http cache lodash.isinteger@https://registry.npmjs.org/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz 0ms (cache hit)
+381 http cache jsonwebtoken@https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz 0ms (cache hit)
+382 http cache pdf-parse@https://registry.npmjs.org/pdf-parse/-/pdf-parse-2.4.5.tgz 0ms (cache hit)
+383 http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+384 http cache node-addon-api@https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz 0ms (cache hit)
+385 http cache bcrypt@https://registry.npmjs.org/bcrypt/-/bcrypt-6.0.0.tgz 0ms (cache hit)
+386 silly tarball no local data for @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.3.tgz. Extracting by manifest.
+387 silly tarball no local data for @img/sharp-wasm32@https://registry.npmjs.org/@img/sharp-wasm32/-/sharp-wasm32-0.35.5.tgz. Extracting by manifest.
+388 silly tarball no local data for detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz. Extracting by manifest.
+389 silly tarball no local data for @img/sharp-win32-x64@https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.5.tgz. Extracting by manifest.
+390 silly tarball no local data for @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz. Extracting by manifest.
+391 silly tarball no local data for @napi-rs/canvas-win32-x64-msvc@https://registry.npmjs.org/@napi-rs/canvas-win32-x64-msvc/-/canvas-win32-x64-msvc-0.1.80.tgz. Extracting by manifest.
+392 silly tarball no local data for @napi-rs/canvas@https://registry.npmjs.org/@napi-rs/canvas/-/canvas-0.1.80.tgz. Extracting by manifest.
+393 silly tarball no local data for pdfjs-dist@https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-5.4.296.tgz. Extracting by manifest.
+394 silly tarball no local data for lodash.isstring@https://registry.npmjs.org/lodash.isstring/-/lodash.isstring-4.0.1.tgz. Extracting by manifest.
+395 silly tarball no local data for lodash.once@https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz. Extracting by manifest.
+396 silly tarball no local data for lodash.isnumber@https://registry.npmjs.org/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz. Extracting by manifest.
+397 silly tarball no local data for lodash.isplainobject@https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz. Extracting by manifest.
+398 silly tarball no local data for lodash.isboolean@https://registry.npmjs.org/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz. Extracting by manifest.
+399 silly tarball no local data for lodash.includes@https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz. Extracting by manifest.
+400 silly tarball no local data for sharp@https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz. Extracting by manifest.
+401 silly tarball no local data for node-gyp-build@https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz. Extracting by manifest.
+402 silly tarball no local data for lodash.isinteger@https://registry.npmjs.org/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz. Extracting by manifest.
+403 silly tarball no local data for jsonwebtoken@https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz. Extracting by manifest.
+404 silly tarball no local data for tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz. Extracting by manifest.
+405 silly tarball no local data for pdf-parse@https://registry.npmjs.org/pdf-parse/-/pdf-parse-2.4.5.tgz. Extracting by manifest.
+406 silly tarball no local data for node-addon-api@https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz. Extracting by manifest.
+407 silly tarball no local data for bcrypt@https://registry.npmjs.org/bcrypt/-/bcrypt-6.0.0.tgz. Extracting by manifest.
+408 http fetch GET 200 https://registry.npmjs.org/lodash.isstring/-/lodash.isstring-4.0.1.tgz 107ms (cache miss)
+409 http fetch GET 200 https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz 113ms (cache miss)
+410 http fetch GET 200 https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz 126ms (cache miss)
+411 http fetch GET 200 https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz 130ms (cache miss)
+412 http fetch GET 200 https://registry.npmjs.org/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz 124ms (cache miss)
+413 http fetch GET 200 https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz 212ms (cache miss)
+414 http fetch GET 200 https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.3.tgz 237ms (cache miss)
+415 http fetch GET 200 https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 233ms (cache miss)
+416 http fetch GET 200 https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.8.4.tgz 238ms (cache miss)
+417 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 305ms
+418 silly audit report {
+418 silly audit report   braces: [
+418 silly audit report     {
+418 silly audit report       id: 1240992,
+418 silly audit report       url: 'https://github.com/advisories/GHSA-vfj7-8cjw-p6xm',
+418 silly audit report       title: 'braces vulnerable to stack-exhaustion denial of service through deeply nested patterns',
+418 silly audit report       severity: 'high',
+418 silly audit report       vulnerable_versions: '<=3.0.3',
+418 silly audit report       cwe: [Array],
+418 silly audit report       cvss: [Object]
+418 silly audit report     }
+418 silly audit report   ]
+418 silly audit report }
+419 silly packumentCache corgi:https://registry.npmjs.org/braces cache-miss
+420 http fetch GET 200 https://registry.npmjs.org/node-addon-api/-/node-addon-api-8.9.2.tgz 543ms (cache miss)
+421 http fetch GET 200 https://registry.npmjs.org/@napi-rs/canvas/-/canvas-0.1.80.tgz 689ms (cache miss)
+422 http fetch GET 200 https://registry.npmjs.org/braces 432ms (cache miss)
+423 silly packumentCache corgi:https://registry.npmjs.org/braces set size:undefined disposed:false
+424 silly packumentCache corgi:https://registry.npmjs.org/chokidar cache-miss
+425 http fetch GET 200 https://registry.npmjs.org/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz 844ms (cache miss)
+426 http fetch GET 200 https://registry.npmjs.org/lodash.includes/-/lodash.includes-4.3.0.tgz 847ms (cache miss)
+427 http fetch GET 200 https://registry.npmjs.org/sharp/-/sharp-0.35.5.tgz 1128ms (cache miss)
+428 http fetch GET 200 https://registry.npmjs.org/bcrypt/-/bcrypt-6.0.0.tgz 1291ms (cache miss)
+429 http fetch GET 200 https://registry.npmjs.org/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz 1715ms (cache miss)
+430 http fetch GET 200 https://registry.npmjs.org/chokidar 1864ms (cache miss)
+431 silly packumentCache corgi:https://registry.npmjs.org/chokidar set size:undefined disposed:false
+432 silly packumentCache corgi:https://registry.npmjs.org/nodemon cache-miss
+433 http fetch GET 200 https://registry.npmjs.org/nodemon 149ms (cache miss)
+434 silly packumentCache corgi:https://registry.npmjs.org/nodemon set size:undefined disposed:false
+435 http fetch GET 200 https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz 3454ms (cache miss)
+436 http fetch GET 200 https://registry.npmjs.org/@img/sharp-wasm32/-/sharp-wasm32-0.35.5.tgz 4012ms (cache miss)
+437 http fetch GET 200 https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.5.tgz 4414ms (cache miss)
+438 http fetch GET 200 https://registry.npmjs.org/pdf-parse/-/pdf-parse-2.4.5.tgz 5320ms (cache miss)
+439 http fetch GET 200 https://registry.npmjs.org/@napi-rs/canvas-win32-x64-msvc/-/canvas-win32-x64-msvc-0.1.80.tgz 9541ms (cache miss)
+440 http fetch GET 200 https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-5.4.296.tgz 9805ms (cache miss)
+441 info run bcrypt@6.0.0 install node_modules/bcrypt node-gyp-build
+442 info run bcrypt@6.0.0 install { code: 0, signal: null }
+443 silly ADD node_modules/@emnapi/runtime
+444 silly ADD node_modules/@emnapi/runtime/node_modules/tslib
+445 silly ADD node_modules/@img/sharp-wasm32
+446 silly ADD node_modules/detect-libc
+447 silly ADD node_modules/@img/sharp-win32-x64
+448 silly ADD
+449 silly ADD
+450 silly ADD
+451 silly ADD
+452 silly ADD
+453 silly ADD
+454 silly ADD
+455 silly ADD
+456 silly ADD
+457 silly ADD
+458 silly ADD
+459 silly ADD
+460 silly ADD
+461 silly ADD
+462 silly ADD
+463 silly ADD
+464 silly ADD
+465 silly ADD
+466 silly ADD
+467 silly ADD
+468 silly ADD
+469 silly ADD
+470 silly ADD
+471 silly ADD
+472 silly ADD node_modules/@img/colour
+473 silly ADD node_modules/@napi-rs/canvas-win32-x64-msvc
+474 silly ADD
+475 silly ADD
+476 silly ADD
+477 silly ADD
+478 silly ADD
+479 silly ADD
+480 silly ADD
+481 silly ADD
+482 silly ADD
+483 silly ADD node_modules/pdfjs-dist
+484 silly ADD node_modules/@napi-rs/canvas
+485 silly ADD node_modules/lodash.once
+486 silly ADD node_modules/lodash.isstring
+487 silly ADD node_modules/lodash.isplainobject
+488 silly ADD node_modules/lodash.isnumber
+489 silly ADD node_modules/lodash.isinteger
+490 silly ADD node_modules/lodash.isboolean
+491 silly ADD node_modules/lodash.includes
+492 silly ADD node_modules/node-gyp-build
+493 silly ADD node_modules/node-addon-api
+494 silly ADD node_modules/sharp
+495 silly ADD node_modules/pdf-parse
+496 silly ADD node_modules/jsonwebtoken
+497 silly ADD node_modules/bcrypt
+498 silly ADD
+499 verbose cwd D:\vidya-ai-backend
+500 verbose os Windows_NT 10.0.26200
+501 verbose node v22.17.0
+502 verbose npm  v10.9.2
+503 notice
+503 notice New major version of npm available! 10.9.2 -> 12.2.0
+503 notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+503 notice To update run: npm install -g npm@12.2.0
+503 notice  { force: true, [Symbol(proc-log.meta)]: true }
+504 verbose exit 0
+505 info ok
