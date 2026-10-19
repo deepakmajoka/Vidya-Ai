@@ -1,5 +1,6 @@
 const express = require('express');
 const { uploadImage, uploadPdf } = require('../middleware/upload');
+const { guestScanQuota, scanRateLimit } = require('../middlewares/deviceAuth');
 const {
   generateCleanPdf,
   generatePdfFromImage,
@@ -9,7 +10,7 @@ const {
 const router = express.Router();
 
 router.post('/clean-generate', generateCleanPdf);
-router.post('/from-image', uploadImage, generatePdfFromImage);
-router.post('/from-pdf', uploadPdf, generatePdfFromPdf);
+router.post('/from-image', scanRateLimit, guestScanQuota, uploadImage, generatePdfFromImage);
+router.post('/from-pdf', scanRateLimit, guestScanQuota, uploadPdf, generatePdfFromPdf);
 
 module.exports = router;

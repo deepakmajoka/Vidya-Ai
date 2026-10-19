@@ -14,6 +14,14 @@ class ApiResponse {
       errors
     });
   }
+
+  static codedError(res, error, message, statusCode) {
+    return res.status(statusCode).json({
+      success: false,
+      error,
+      message
+    });
+  }
 }
 
 module.exports = ApiResponse;

@@ -3,6 +3,21 @@ const { LANGUAGE_NAMES } = require('../constants/languages');
 
 const MODEL = 'gemini-3.8-flash';
 
+const universalSolverResponseSchema = {
+  type: 'OBJECT',
+  properties: {
+    detectedSubject: {
+      type: 'STRING',
+      enum: ['Math', 'Reasoning', 'English', 'GK', 'Current Affairs']
+    },
+    questionText: { type: 'STRING' },
+    correctOption: { type: 'STRING' },
+    stepByStepSolution: { type: 'STRING' },
+    keyTakeaway: { type: 'STRING' }
+  },
+  required: ['detectedSubject', 'questionText', 'correctOption', 'stepByStepSolution', 'keyTakeaway']
+};
+
 const visionResponseSchema = {
   type: 'OBJECT',
   properties: {
@@ -85,6 +100,44 @@ const requestedLanguageName = (language) => LANGUAGE_NAMES[
 ] || language;
 
 class GeminiService {
+  static async solveUniversal({ text, imageBuffer, mimeType, language = 'English' } = {}) {
+    if ((!text || typeof text !== 'string' || !text.trim()) && !imageBuffer) {
+      throw new TypeError('A non-empty text question or image is required.');
+    }
+    if (imageBuffer && !mimeType) {
+      throw new TypeError('An image MIME type is required when an image is provided.');
+    }
+
+    const prompt = `
+You are Vidya AI, a precise, exam-focused tutor. Detect the subject of the supplied question and solve it. Choose exactly one detectedSubject from: Math, Reasoning, English, GK, Current Affairs.
+
+SUBJECT RULES:
+- Math: show the formula, substitute values, explain each calculation, and give the computed answer.
+- Reasoning: explain the underlying logic or pattern and each step used to reach the answer.
+- English: give the correct answer and explain the relevant grammar or vocabulary rule. For multiple-choice questions, explain why the correct option works and why each of the other three options is incorrect. If fewer than four options are supplied, explain every supplied alternative.
+- GK: provide the accurate fact that answers the question and include exactly 3 to 4 concise supplementary revision bullet points in stepByStepSolution.
+- Current Affairs: provide the answer with context, background, and exam relevance in stepByStepSolution. Do not invent details; state uncertainty if the supplied question lacks enough information.
+
+Recognize and preserve the complete question and its answer options in questionText. Set correctOption to the correct option label and answer, or the direct answer when options are absent. Write the explanation and keyTakeaway in ${language}. Keep keyTakeaway concise and useful for revision. Return only a JSON object matching the exact schema; do not add fields or markdown.
+`;
+    const parts = [{ text: prompt }];
+    if (text?.trim()) parts.push({ text: `QUESTION TEXT:\n${text.trim()}` });
+    if (imageBuffer) {
+      parts.push({ inlineData: { data: imageBuffer.toString('base64'), mimeType } });
+    }
+
+    const response = await ai.models.generateContent({
+      model: MODEL,
+      contents: [{ role: 'user', parts }],
+      config: {
+        responseMimeType: 'application/json',
+        responseSchema: universalSolverResponseSchema
+      }
+    });
+
+    return parseJsonResponse(response, 'universal solver');
+  }
+
   /**
    * Extracts and solves every question found in parsed PDF text.
    * @param {string} extractedText
