@@ -14,6 +14,7 @@ const createFileFilter = (allowedMimeTypes, allowedExtensions, label) => (req, f
 
   const error = new Error(`Invalid ${label} file type.`);
   error.statusCode = 400;
+  error.code = 'INVALID_FILE_TYPE';
   return callback(error);
 };
 
@@ -40,16 +41,10 @@ const uploadDocument = multer({
     ['.pdf', '.docx', '.doc', '.txt'],
     'document'
   )
-}).fields([
-  { name: 'pdf', maxCount: 1 },
-  { name: 'file', maxCount: 1 },
-  { name: 'document', maxCount: 1 }
-]);
+}).single('document');
 
 const uploadPdf = (req, res, next) => uploadDocument(req, res, (error) => {
   if (error) return next(error);
-  const uploaded = req.files && (req.files.pdf || req.files.file || req.files.document);
-  req.file = uploaded?.[0];
   return next();
 });
 

@@ -19,7 +19,7 @@ exports.solveImageQuestion = async (req, res) => {
       mimeType: image.mimeType,
       language: getLanguage(req.body)
     });
-    return res.status(200).json(solution);
+    return ApiResponse.success(res, solution, 'Question solved successfully.');
   } catch (error) {
     console.error('Image solve error:', error);
     return ApiResponse.error(res, 'Internal Server Error', 500);
@@ -28,8 +28,8 @@ exports.solveImageQuestion = async (req, res) => {
 
 exports.solveTextQuestion = async (req, res) => {
   const questionText = req.body?.questionText ?? req.body?.text;
-  if (typeof questionText !== 'string' || !questionText.trim()) {
-    return ApiResponse.error(res, 'questionText must be a non-empty string.', 400);
+  if (typeof questionText !== 'string' || !questionText.trim() || questionText.length > 5000) {
+    return ApiResponse.error(res, 'questionText must be a non-empty string of at most 5000 characters.', 400, 'VALIDATION_ERROR');
   }
 
   try {
@@ -37,7 +37,7 @@ exports.solveTextQuestion = async (req, res) => {
       text: questionText.trim(),
       language: getLanguage(req.body)
     });
-    return res.status(200).json(solution);
+    return ApiResponse.success(res, solution, 'Question solved successfully.');
   } catch (error) {
     console.error('Text solve error:', error);
     return ApiResponse.error(res, 'Internal Server Error', 500);
@@ -52,7 +52,7 @@ exports.solveDocumentQuestion = async (req, res) => {
     if (!text?.trim()) return ApiResponse.error(res, 'No extractable text was found in the document.', 422);
 
     const solution = await GeminiService.solveUniversal({ text, language: getLanguage(req.body) });
-    return res.status(200).json(solution);
+    return ApiResponse.success(res, solution, 'Document solved successfully.');
   } catch (error) {
     console.error('Document solve error:', error);
     return ApiResponse.error(res, 'Internal Server Error', 500);

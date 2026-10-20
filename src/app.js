@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const errorHandler = require('./middleware/errorHandler');
+const ApiResponse = require('./utils/apiResponse');
 const { deviceAuth } = require('./middlewares/deviceAuth');
 
 const app = express();
@@ -27,8 +28,14 @@ app.use('/api/v1/languages', languageRoutes);
 
 // Health Check
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'OK', uptime: process.uptime() });
+  return ApiResponse.success(res, { status: 'OK', uptime: process.uptime() }, 'Service is healthy.');
 });
+
+app.use((req, res) => res.status(404).json({
+  success: false,
+  message: 'Route not found',
+  error: 'NOT_FOUND'
+}));
 
 app.use(errorHandler);
 

@@ -19,8 +19,9 @@ const createToken = (user) => {
 
 exports.register = async (req, res) => {
   const { email, password } = req.body || {};
-  if (typeof email !== 'string' || !email.trim() || typeof password !== 'string' || password.length < 8) {
-    return ApiResponse.error(res, 'A valid email and password of at least 8 characters are required.', 400);
+  if (typeof email !== 'string' || !email.trim() || email.trim().length > 255
+    || typeof password !== 'string' || password.length < 8 || password.length > 128) {
+    return ApiResponse.error(res, 'Email must be at most 255 characters and password must be 8 to 128 characters.', 400, 'VALIDATION_ERROR');
   }
 
   try {
@@ -41,8 +42,9 @@ exports.register = async (req, res) => {
 
 exports.login = async (req, res) => {
   const { email, password } = req.body || {};
-  if (typeof email !== 'string' || !email.trim() || typeof password !== 'string' || !password) {
-    return ApiResponse.error(res, 'Email and password are required.', 400);
+  if (typeof email !== 'string' || !email.trim() || email.trim().length > 255
+    || typeof password !== 'string' || !password || password.length > 128) {
+    return ApiResponse.error(res, 'Email must be at most 255 characters and password must be 1 to 128 characters.', 400, 'VALIDATION_ERROR');
   }
   if (!process.env.JWT_SECRET) return ApiResponse.error(res, 'Authentication is not configured.', 500);
 

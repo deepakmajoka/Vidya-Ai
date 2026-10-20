@@ -17,8 +17,8 @@ exports.generateQuiz = async (req, res) => {
     isCurrentAffairs = false
   } = req.body || {};
 
-  if (typeof topic !== 'string' || !topic.trim()) {
-    return ApiResponse.error(res, 'topic must be a non-empty string', 400);
+  if (typeof topic !== 'string' || !topic.trim() || topic.length > 200) {
+    return ApiResponse.error(res, 'topic must be a non-empty string of at most 200 characters', 400, 'VALIDATION_ERROR');
   }
   if (subject !== undefined && (typeof subject !== 'string' || !subject.trim())) {
     return ApiResponse.error(res, 'subject must be a non-empty string when provided', 400);
@@ -54,6 +54,9 @@ exports.evaluateQuiz = (req, res) => {
 
   if (!Array.isArray(questions) || questions.length === 0) {
     return ApiResponse.error(res, 'questions must be a non-empty array', 400);
+  }
+  if (questions.length > 50) {
+    return ApiResponse.error(res, 'questions must contain no more than 50 items', 400, 'VALIDATION_ERROR');
   }
   if (!Array.isArray(answers)) {
     return ApiResponse.error(res, 'answers must be an array', 400);

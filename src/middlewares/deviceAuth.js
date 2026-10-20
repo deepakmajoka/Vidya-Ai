@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const User = require('../models/User');
 const DeviceUsage = require('../models/DeviceUsage');
 const ApiResponse = require('../utils/apiResponse');
@@ -54,6 +55,9 @@ const deviceAuth = async (req, res, next) => {
 
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
+    if (typeof payload.sub !== 'string' || !mongoose.Types.ObjectId.isValid(payload.sub)) {
+      return ApiResponse.error(res, 'Invalid authentication token.', 401, 'INVALID_TOKEN');
+    }
     const user = await User.findById(payload.sub);
     if (!user) return ApiResponse.error(res, 'User account was not found.', 401);
 
