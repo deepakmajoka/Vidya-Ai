@@ -47,7 +47,7 @@ Multilingual educational backend service for a Flutter mobile client. The applic
 2. `POST /api/v1/solve/pdf`: Parses student PDF question papers, extracts problems, and provides solutions.
 3. `POST /api/v1/pdf/clean-generate`: Extracts text/formulas from watermarked documents and renders a fresh, clean, branded PDF without original watermarks.
 4. `POST /api/v1/quiz/generate`: Generates randomized MCQs for Math, Reasoning, or Current Affairs (with Google Search Grounding tool enabled).
-5. `GET /api/v1/quiz/:id/evaluate`: Evaluates student score and tracks progress.
+5. `POST /api/v1/quiz/evaluate`: Canonical endpoint for evaluating student scores and tracking progress.
 
 ---
 

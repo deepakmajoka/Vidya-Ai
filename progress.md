@@ -36,12 +36,14 @@
 - [x] PDF solve controller & route (`/api/v1/solve/pdf`)
 - [x] Clean PDF generation route (`/api/v1/pdf/clean-generate`)
 - [x] Dynamic quiz generation & evaluation routes (`/api/v1/quiz`)
+- [x] Canonical quiz evaluation contract: `POST /api/v1/quiz/evaluate`
 
 ## Phase 6: Authentication, Device Security & Universal Solver
 - [x] Student registration/login with bcrypt password hashes and JWT authentication
 - [x] Permanent first-login device binding and per-request device validation
 - [x] Admin-only device reset endpoint (`POST /api/admin/reset-device`)
-- [x] Guest limit of three scans per device and a ten-scan rolling ten-minute rate limit
+- [x] MongoDB-persisted guest limit of three successful scans per device; failed validation, uploads, or AI requests do not consume quota
+- [x] Ten-scan rolling ten-minute scan rate limit counts successful scans
 - [x] Universal Gemini image, text, and document solver with a strict subject response schema
 
 ---
@@ -58,4 +60,5 @@
 - Session wrap-up: Camera image and PDF uploads se clean PDF export `/api/v1/pdf/from-image` aur `/api/v1/pdf/from-pdf` par ready hai. `with_solution` (Solution Mode) aur `without_solution` (Practice Mode) available hain. Devanagari font asset installed hai; `cleanLatexForPdf` PDFKit output ke liye LaTeX markers ko strip/normalize karta hai. Current Gemini model: `gemini-3.8-flash`. Changed JavaScript files `node --check` se verified hain. `assets/fonts/OFL.txt` abhi pending hai.
 - Feature verification: `mammoth` and `word-extractor` installed and verified with `require()`; `npm install` completed successfully using the workspace npm cache. Universal PDF/Word/text upload and bilingual English-Hindi prompt support are implemented.
 - Next step: Flutter app integration aur screens wire up karna.
-- Implementation note: Guest quotas and scan rate limits use process memory and reset when the server restarts. Admin accounts must be provisioned with the `admin` role outside public registration. Set `JWT_SECRET` in the runtime environment.
+- Implementation note: Guest quota counts persist in MongoDB (`DeviceUsage`) across restarts. Scan rate-window timestamps remain process-local and reset on restart. Admin accounts must be provisioned with the `admin` role outside public registration. Set `JWT_SECRET` in the runtime environment.
+- Edge-case fixes: Quota and rate-limit consumption now occurs only when a scan/PDF endpoint sends a successful response; malformed input, invalid/missing uploads, extraction failures, Gemini errors, and PDF generation errors do not consume a scan. Quiz evaluation is documented at `POST /api/v1/quiz/evaluate`; this is the single canonical endpoint.
