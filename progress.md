@@ -42,9 +42,12 @@
 - [x] Student registration/login with bcrypt password hashes and JWT authentication
 - [x] Permanent first-login device binding and per-request device validation
 - [x] Admin-only device reset endpoint (`POST /api/admin/reset-device`)
-- [x] MongoDB-persisted guest limit of three successful scans per device; failed validation, uploads, or AI requests do not consume quota
+- [x] MongoDB-persisted guest limit of three reserved scans per device
 - [x] Ten-scan rolling ten-minute scan rate limit counts successful scans
 - [x] Universal Gemini image, text, and document solver with a strict subject response schema
+- [x] Free student lifetime scan cap and premium/admin bypass
+- [x] Scan quotas and rate limits applied to quiz generation and clean PDF generation
+- [x] Authentication endpoint throttling and generic 500 responses in controllers
 
 ---
 
@@ -61,4 +64,5 @@
 - Feature verification: `mammoth` and `word-extractor` installed and verified with `require()`; `npm install` completed successfully using the workspace npm cache. Universal PDF/Word/text upload and bilingual English-Hindi prompt support are implemented.
 - Next step: Flutter app integration aur screens wire up karna.
 - Implementation note: Guest quota counts persist in MongoDB (`DeviceUsage`) across restarts. Scan rate-window timestamps remain process-local and reset on restart. Admin accounts must be provisioned with the `admin` role outside public registration. Set `JWT_SECRET` in the runtime environment.
-- Edge-case fixes: Quota and rate-limit consumption now occurs only when a scan/PDF endpoint sends a successful response; malformed input, invalid/missing uploads, extraction failures, Gemini errors, and PDF generation errors do not consume a scan. Quiz evaluation is documented at `POST /api/v1/quiz/evaluate`; this is the single canonical endpoint.
+- Edge-case fixes: Initially, quota and rate-limit consumption occurred only when a scan/PDF endpoint sent a successful response. Quotas now reserve usage before expensive processing to prevent concurrent limit bypasses, so attempts that later fail validation or processing consume quota. Quiz evaluation is documented at `POST /api/v1/quiz/evaluate`; this is the single canonical endpoint.
+- Security hardening: Added a 10-scan lifetime free quota for student accounts (atomically reserved before AI work), with premium/admin bypass; guests retain the three-scan device quota. Quiz generation and clean PDF generation now pass through scan rate limiting and quota checks, clean PDF generation caps input at 50 questions, login/registration are throttled to 10 attempts per IP per 15 minutes, and specified controller 500 responses are generic while details are logged. Note: free-tier reservations count attempts, including requests that later fail validation or processing.

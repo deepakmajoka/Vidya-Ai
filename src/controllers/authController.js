@@ -34,7 +34,8 @@ exports.register = async (req, res) => {
     return ApiResponse.success(res, { user: { id: user.id, email: user.email, role: user.role } }, 'Account created.', 201);
   } catch (error) {
     if (error.code === 11000) return ApiResponse.error(res, 'An account with this email already exists.', 409);
-    return ApiResponse.error(res, error.message || 'Failed to create account.', 500);
+    console.error('Registration error:', error);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 
@@ -93,7 +94,8 @@ exports.login = async (req, res) => {
       user: { id: user.id, email: user.email, role: user.role }
     }, 'Login successful.');
   } catch (error) {
-    return ApiResponse.error(res, error.message || 'Login failed.', 500);
+    console.error('Login error:', error);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 
@@ -113,6 +115,7 @@ exports.resetDevice = async (req, res) => {
     return ApiResponse.success(res, { userId: user.id, isDeviceLocked: user.isDeviceLocked }, 'Device binding reset.');
   } catch (error) {
     if (error.name === 'CastError') return ApiResponse.error(res, 'Invalid userId.', 400);
-    return ApiResponse.error(res, error.message || 'Failed to reset device binding.', 500);
+    console.error('Device reset error:', error);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };

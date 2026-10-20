@@ -4,9 +4,33 @@ const DeviceUsage = require('../models/DeviceUsage');
 const ApiResponse = require('../utils/apiResponse');
 
 const GUEST_SCAN_LIMIT = 3;
+const FREE_STUDENT_SCAN_LIMIT = 10;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_SCANS = 10;
+const AUTH_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const AUTH_RATE_LIMIT_MAX_REQUESTS = 10;
 const scansByDevice = new Map();
+const authRequestsByIp = new Map();
+
+const authRateLimit = (req, res, next) => {
+  const key = req.ip || req.socket.remoteAddress || 'unknown';
+  const now = Date.now();
+  const activeRequests = (authRequestsByIp.get(key) || [])
+    .filter((timestamp) => now - timestamp < AUTH_RATE_LIMIT_WINDOW_MS);
+  if (activeRequests.length >= AUTH_RATE_LIMIT_MAX_REQUESTS) {
+    return ApiResponse.codedError(res, 'AUTH_RATE_LIMIT_EXCEEDED', 'Too many authentication attempts. Please try again later.', 429);
+  }
+  activeRequests.push(now);
+  authRequestsByIp.set(key, activeRequests);
+  if (authRequestsByIp.size > 10000) {
+    for (const [ip, timestamps] of authRequestsByIp) {
+      if (!timestamps.some((timestamp) => now - timestamp < AUTH_RATE_LIMIT_WINDOW_MS)) {
+        authRequestsByIp.delete(ip);
+      }
+    }
+  }
+  return next();
+};
 
 const sendDeviceMismatch = (res) => ApiResponse.codedError(
   res,
@@ -64,20 +88,55 @@ const requireAdmin = (req, res, next) => {
 };
 
 const guestScanQuota = async (req, res, next) => {
-  if (req.user?.role === 'admin' || req.user) return next();
+  if (req.user?.role === 'admin' || req.user?.plan === 'premium') return next();
+
+  if (req.user) {
+    try {
+      // Reserve atomically before calling paid services so parallel requests cannot
+      // pass the free-tier limit. Attempts count toward the lifetime free allowance.
+      const updatedUser = await User.findOneAndUpdate(
+        {
+          _id: req.user._id,
+          role: 'student',
+          $and: [
+            { $or: [{ plan: 'free' }, { plan: { $exists: false } }] },
+            { $or: [{ scanCount: { $lt: FREE_STUDENT_SCAN_LIMIT } }, { scanCount: { $exists: false } }] }
+          ]
+        },
+        { $inc: { scanCount: 1 } },
+        { new: true }
+      );
+      if (!updatedUser) {
+        return ApiResponse.codedError(res, 'FREE_LIMIT_REACHED', 'You have reached the 10 free scans limit. Please upgrade to premium.', 403);
+      }
+      req.freeScanReserved = true;
+      return next();
+    } catch (error) {
+      return next(error);
+    }
+  }
 
   const deviceId = req.get('x-device-id');
   if (!deviceId) return ApiResponse.error(res, 'x-device-id header is required.', 400);
 
   try {
-    const usage = await DeviceUsage.findOne({ deviceId }).lean();
-    if ((usage?.scanCount || 0) >= GUEST_SCAN_LIMIT) {
-      return ApiResponse.codedError(
-        res,
-        'GUEST_LIMIT_REACHED',
-        'You have reached your 3 free scans limit. Please login or subscribe to continue.',
-        403
-      );
+    const usage = await DeviceUsage.findOneAndUpdate(
+      {
+        deviceId,
+        $or: [{ scanCount: { $lt: GUEST_SCAN_LIMIT } }, { scanCount: { $exists: false } }]
+      },
+      { $inc: { scanCount: 1 }, $set: { lastScanAt: new Date() } },
+      { new: true }
+    );
+    if (!usage) {
+      try {
+        await DeviceUsage.create({ deviceId, scanCount: 1, lastScanAt: new Date() });
+      } catch (error) {
+        if (error.code === 11000) {
+          return ApiResponse.codedError(res, 'GUEST_LIMIT_REACHED', 'You have reached your 3 free scans limit. Please login or subscribe to continue.', 403);
+        }
+        throw error;
+      }
     }
     return next();
   } catch (error) {
@@ -116,19 +175,6 @@ const scanRateLimit = (req, res, next) => {
       if (timestamps.length >= RATE_LIMIT_MAX_SCANS) {
         throw new Error('Scan rate limit was reached while processing the request.');
       }
-      if (!req.user) {
-        const existing = await DeviceUsage.findOne({ deviceId });
-        if (existing) {
-          if (existing.scanCount >= GUEST_SCAN_LIMIT) {
-            throw new Error('Guest scan quota was reached while processing the request.');
-          }
-          existing.scanCount += 1;
-          existing.lastScanAt = new Date();
-          await existing.save();
-        } else {
-          await DeviceUsage.create({ deviceId, scanCount: 1, lastScanAt: new Date() });
-        }
-      }
       timestamps.push(Date.now());
       scansByDevice.set(deviceId, timestamps);
     };
@@ -142,4 +188,4 @@ const scanRateLimit = (req, res, next) => {
   return next();
 };
 
-module.exports = { deviceAuth, requireAuth, requireAdmin, guestScanQuota, scanRateLimit };
+module.exports = { deviceAuth, requireAuth, requireAdmin, guestScanQuota, scanRateLimit, authRateLimit };

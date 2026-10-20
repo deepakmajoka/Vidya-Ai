@@ -21,7 +21,8 @@ exports.solveImageQuestion = async (req, res) => {
     });
     return res.status(200).json(solution);
   } catch (error) {
-    return ApiResponse.error(res, error.message || 'Failed to solve question.', 500);
+    console.error('Image solve error:', error);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 
@@ -38,7 +39,8 @@ exports.solveTextQuestion = async (req, res) => {
     });
     return res.status(200).json(solution);
   } catch (error) {
-    return ApiResponse.error(res, error.message || 'Failed to solve question.', 500);
+    console.error('Text solve error:', error);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 
@@ -52,6 +54,7 @@ exports.solveDocumentQuestion = async (req, res) => {
     const solution = await GeminiService.solveUniversal({ text, language: getLanguage(req.body) });
     return res.status(200).json(solution);
   } catch (error) {
-    return ApiResponse.error(res, error.message || 'Failed to solve document.', 500);
+    console.error('Document solve error:', error);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };

@@ -51,6 +51,9 @@ exports.generateCleanPdf = async (req, res) => {
   if (!Array.isArray(questionsWithSolutions)) {
     return ApiResponse.error(res, 'questionsWithSolutions must be an array', 400);
   }
+  if (questionsWithSolutions.length > 50) {
+    return ApiResponse.error(res, 'questionsWithSolutions must contain no more than 50 items', 400);
+  }
   const options = validateModeAndLanguage({ mode, language });
   if (options.error) {
     return ApiResponse.error(res, options.error, 400);
@@ -67,7 +70,7 @@ exports.generateCleanPdf = async (req, res) => {
     return sendPdfDownload(res, pdfBuffer, title);
   } catch (error) {
     console.error('Clean PDF Generation Error:', error);
-    return ApiResponse.error(res, error.message || 'Failed to generate PDF', 500);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 
@@ -107,7 +110,7 @@ exports.generatePdfFromImage = async (req, res) => {
     return sendPdfDownload(res, pdfBuffer, `${subject}-${titleForMode(options.mode)}`);
   } catch (error) {
     console.error('Image-to-PDF Export Error:', error);
-    return ApiResponse.error(res, error.message || 'Failed to generate PDF from image', 500);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 
@@ -154,6 +157,6 @@ exports.generatePdfFromPdf = async (req, res) => {
     return sendPdfDownload(res, pdfBuffer, titleForMode(options.mode));
   } catch (error) {
     console.error('PDF-to-PDF Export Error:', error);
-    return ApiResponse.error(res, error.message || 'Failed to generate clean PDF', 500);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };

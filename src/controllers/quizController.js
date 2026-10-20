@@ -45,7 +45,7 @@ exports.generateQuiz = async (req, res) => {
     return ApiResponse.success(res, quiz, 'Quiz generated successfully');
   } catch (error) {
     console.error('Quiz Generation Error:', error);
-    return ApiResponse.error(res, error.message || 'Failed to generate quiz', 500);
+    return ApiResponse.error(res, 'Internal Server Error', 500);
   }
 };
 

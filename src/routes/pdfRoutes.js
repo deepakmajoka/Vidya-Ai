@@ -9,7 +9,7 @@ const {
 
 const router = express.Router();
 
-router.post('/clean-generate', generateCleanPdf);
+router.post('/clean-generate', scanRateLimit, guestScanQuota, generateCleanPdf);
 router.post('/from-image', scanRateLimit, guestScanQuota, uploadImage, generatePdfFromImage);
 router.post('/from-pdf', scanRateLimit, guestScanQuota, uploadPdf, generatePdfFromPdf);
 

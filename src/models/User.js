@@ -19,6 +19,17 @@ const userSchema = new mongoose.Schema({
     default: 'student',
     required: true
   },
+  plan: {
+    type: String,
+    enum: ['free', 'premium'],
+    default: 'free',
+    required: true
+  },
+  scanCount: {
+    type: Number,
+    default: 0,
+    min: 0
+  },
   registeredDeviceId: {
     type: String,
     default: null
